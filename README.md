@@ -13,4 +13,5 @@ docker run --rm -v /some/work:/work "$IMAGE" \
 
 ## Bumping
 
-Renovate raises `SBT_REF`.
+Renovate raises `SBT_REF`, and the pinned `debian:trixie-slim` digest whenever
+that tag is republished.

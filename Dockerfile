@@ -3,7 +3,7 @@
 ARG SBT_REF=20260822
 
 # digest pinned so Renovate raises a PR whenever trixie-slim is republished
-FROM debian:trixie-slim@sha256:d7e12182ce18b85b93007c1dedf31f2d29e01ccf3182cc4017c709b6259bc132 AS build
+FROM debian:trixie-slim@sha256:a99cfc517144bc59b1978475ec53b46ecabec7e43635402ee5b77cc54cd1b20a AS build
 ARG SBT_REF
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -23,7 +23,7 @@ RUN set -eu; \
     cmake --build build -j "$jobs"
 
 # same suite as the build stage; the binary links its glibc and libstdc++
-FROM debian:trixie-slim@sha256:d7e12182ce18b85b93007c1dedf31f2d29e01ccf3182cc4017c709b6259bc132
+FROM debian:trixie-slim@sha256:a99cfc517144bc59b1978475ec53b46ecabec7e43635402ee5b77cc54cd1b20a
 ARG SBT_REF
 LABEL org.opencontainers.image.title="signalbackup-tools"
 LABEL org.opencontainers.image.source="https://github.com/bepaald/signalbackup-tools"

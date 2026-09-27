@@ -1,6 +1,6 @@
 # Upstream tags YYYYMMDD, and YYYYMMDD-N for a same-day re-cut.
 # renovate: datasource=github-tags depName=bepaald/signalbackup-tools
-ARG SBT_REF=20260822
+ARG SBT_REF=20260927-1
 
 # digest pinned so Renovate raises a PR whenever trixie-slim is republished
 FROM debian:trixie-slim@sha256:a99cfc517144bc59b1978475ec53b46ecabec7e43635402ee5b77cc54cd1b20a AS build
